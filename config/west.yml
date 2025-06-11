@@ -12,7 +12,7 @@ manifest:
       revision: main
       import: app/west.yml
     - name: ulpmp-shield-module
-      remote: benefitbug
+      url: https://github.com/benefitbug/ulpmp-shield-module
       revision: main
   self:
     path: config
