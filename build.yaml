@@ -20,6 +20,8 @@
 ---
 include:
   - board: nice_nano_v2
-    shield: benball44
+    shield: benball44_left
+  - board: nice_nano_v2
+    shield: benball44_right
   - board: nice_nano_v2
     shield: settings_reset
