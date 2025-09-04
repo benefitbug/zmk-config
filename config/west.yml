@@ -11,7 +11,7 @@ manifest:
       remote: zmkfirmware
       revision: main
       import: app/west.yml
-    - name: zmk-benball44-module
+    - name: zmk-benpoint-module
       remote: benefitbug
       revision: main
   self:
