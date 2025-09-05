@@ -1,0 +1,12 @@
+file_format: "1"
+id: benpoint
+name: BenPoint
+type: shield
+url: https://github.com/benefitbug/zmk-benpoint-module/
+requires: [pro_micro]
+features:
+  - keys
+  - pointer
+siblings:
+  - benpoint_left
+  - benpoint_right

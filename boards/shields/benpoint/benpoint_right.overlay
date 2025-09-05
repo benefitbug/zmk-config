@@ -1,0 +1,5 @@
+#include "benpoint.dtsi" // The shared dtsi file is included in the overlay
+
+&default_transform { // Offset of 3 because the left side has 3 columns
+    col-offset = <6>;
+};
