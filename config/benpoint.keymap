@@ -1,6 +1,6 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
-
+#include <dt-bindings/zmk/bt.h>
 
 #define BASE 0
 #define LOWER 1
@@ -59,11 +59,69 @@
         default_layer {
             label = "QWRT";
             bindings = <
-&kp SQT    &kp W     &kp E    &kp R      &kp T                                      &kp Y           &kp U  &kp I      &kp O    &kp SEMICOLON
-&kp A      &kp S     &kp D    &kp F      &kp G                                      &kp H           &kp J  &kp K      &kp L    &kp P
-&kp Q      &kp X     &kp C    &kp V      &kp Z      &kp A            &kp B          &kp N           &kp M  &kp COMMA  &kp DOT  &kp B
-&kp LCTRL  &kp LALT  &kp TAB  &kp ENTER  &kp SPACE  &kp RIGHT_ALT    &kp BACKSPACE  &kp LEFT_SHIFT  &kp A  &kp A      &kp A    &kp SLASH
+&kp SQT    &kp W     &kp E    &kp R      &kp T                                       &kp Y           &kp U  &kp I      &kp O    &kp SEMICOLON
+&kp A      &kp S     &kp D    &kp F      &kp G                                       &kp H           &kp J  &kp K      &kp L    &kp P
+&kp Q      &kp X     &kp C    &kp V      &kp Z      &kp A             &kp B          &kp N           &kp M  &kp COMMA  &kp DOT  &kp B
+&kp LCTRL  &kp LALT  &kp TAB  &kp ENTER  &kp SPACE  &lt 2 RIGHT_ALT   &kp BACKSPACE  &kp LEFT_SHIFT  &mo 3  &mo 3      &kp A    &kp SLASH
             >;
         };
+
+        number_layer {
+            label = "NUM";
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                  &trans  &trans    &kp UP_ARROW  &trans     &trans
+&trans  &trans  &trans  &trans  &trans                  &trans  &kp LEFT  &kp DOWN      &kp RIGHT  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans        &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans        &trans     &trans
+            >;
+        };
+        
+        symbol_layer {
+            label = "SYM";
+            bindings = <
+&kp LG(NUMBER_1)  &kp LG(NUMBER_2)  &kp LG(N3)  &kp LG(N4)  &kp LG(N5)                    &kp GRAVE         &kp MINUS  &kp UP_ARROW  &kp EQUAL  &kp BACKSLASH
+&kp ESCAPE        &mkp RCLK         &mo 5       &mkp LCLK   &kp DEL                       &kp LEFT_BRACKET  &kp LEFT   &kp DOWN      &kp RIGHT  &kp RIGHT_BRACKET
+&kp N1            &kp N2            &kp N3      &kp N4      &kp N5      &trans  &trans    &kp N6            &kp N7     &kp N8        &kp N9     &kp N0
+&mo 3             &trans            &tog 1      &bt BT_CLR  &bt BT_NXT  &trans  &kp LGUI  &trans            &trans     &trans        &trans     &tog 5
+            >;
+        };
+
+        function_layer {
+            label = "FUN";
+            bindings = <
+&trans  &trans   &trans   &trans  &trans                  &trans  &trans  &trans  &trans  &trans
+&trans  &trans   &trans   &trans  &trans                  &trans  &trans  &trans  &trans  &trans
+&kp F1  &kp F2   &kp F3   &kp F4  &kp F5  &trans  &trans  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10
+&trans  &kp F11  &kp F12  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+            >;
+        };
+
+#ifdef HAS_MOUSE_TP
+
+    // Automatically activated when the mouse or trackpoint moves.
+    // Configured in `include/mouse_tp.dtsi`.
+    MouseTP_layer {
+      display-name = "TP";
+      bindings = <
+U_TOG_TP_SET  &msc SCRL_UP   &trans      &msc SCRL_DOWN  &trans                  &trans  &trans  &trans  &trans  &trans
+&trans        &mkp RCLK      &mkp MCLK   &mkp LCLK       &trans                  &trans  &trans  &trans  &trans  &trans
+&kp F1        &trans         &trans      &trans          &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans        &kp F11        &kp F12     &trans          &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+        >;
     };
-};
+
+    // You can find the defines for the actual key press behaviors in `include/mouse_tp.dtsi`.
+    MouseSettings_layer {
+      display-name = "TP Set";
+      bindings = <
+U_TOG_TP_SET  &trans   &trans   &trans  &trans                  U_MSS_TP_S_I   U_MSS_TP_S_D   U_MSS_TP_PT_I   U_MSS_TP_PT_D  &trans
+U_MSS_RESET   &trans   &trans   &trans  &trans                  U_MSS_TP_NI_I  U_MSS_TP_NI_D  U_MSS_TP_V6_I   U_MSS_TP_V6_D  &trans
+U_MSS_LOG     &trans   &trans   &trans  &trans  &trans  &trans  &trans         &trans         &trans          &trans         &trans
+&trans        &trans   &trans   &trans  &trans  &trans  &trans  &trans         &trans         &trans          &trans         &trans
+      >;
+    };
+
+#endif
+
+    };
+ };
