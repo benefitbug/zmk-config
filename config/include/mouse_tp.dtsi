@@ -74,7 +74,7 @@
     * Input Listener Config
     */
 
-    &mouse_ps2_input_listener {
+   // &mouse_ps2_input_listener {
 
       // Adjust pointing device axes.
       // This adjusts the values inside the zmk driver. Some
@@ -94,8 +94,8 @@
 
       // How long to wait, after the last mouse movement, before deactivating
       // the layer (Default: 250)
-      layer-toggle-timeout-ms = <250>;
-    };
+      //  layer-toggle-timeout-ms = <250>;
+    // };
 
 
    /*
