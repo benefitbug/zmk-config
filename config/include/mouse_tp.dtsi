@@ -74,6 +74,7 @@
     * Input Listener Config
     */
 
+   // Disable this following input listener, not compatible with zmk main
    // &mouse_ps2_input_listener {
 
       // Adjust pointing device axes.
@@ -86,7 +87,7 @@
 
       // Set the layer that should automatically activate when the mouse is
       // moving.
-      layer-toggle = <MOUSE_TP>;
+      // layer-toggle = <MOUSE_TP>;
 
       // How long the mouse needs to move for before the layer is activated (to
       // avoid accidental activations while typing) (Default: 250)
