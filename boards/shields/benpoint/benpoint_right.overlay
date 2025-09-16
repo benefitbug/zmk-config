@@ -495,7 +495,10 @@
     };
 
     mouse_ps2_input_listener: mouse_ps2_input_listener {
-        compatible = "zmk,input-listener-ps2";
+//        This is infused-kim's input listener, doesn't work on main zmk
+//        compatible = "zmk,input-listener-ps2";
+//      This is main zmk input listener
+        compatible = "zmk,input-listener";
         status = "disabled";
 
         device = <&mouse_ps2>;
