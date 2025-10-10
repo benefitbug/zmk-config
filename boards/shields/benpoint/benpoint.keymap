@@ -82,7 +82,7 @@
 &kp LG(NUMBER_1)  &kp LG(NUMBER_2)  &kp LG(N3)  &kp LG(N4)  &kp LG(N5)                    &kp GRAVE         &kp MINUS  &kp UP_ARROW  &kp EQUAL  &kp BACKSLASH
 &kp ESCAPE        &mkp RCLK         &mo 5       &mkp LCLK   &kp DEL                       &kp LEFT_BRACKET  &kp LEFT   &kp DOWN      &kp RIGHT  &kp RIGHT_BRACKET
 &kp N1            &kp N2            &kp N3      &kp N4      &kp N5      &trans  &trans    &kp N6            &kp N7     &kp N8        &kp N9     &kp N0
-&mo 3             &trans            &tog 1      &bt BT_CLR  &bt BT_NXT  &trans  &kp LGUI  &trans            &trans     &trans        &trans     &tog 5
+&mo 3             &trans            &tog 1      &bt BT_CLR  &bt BT_NXT  &trans  &kp LGUI  &trans            &trans     &trans        &trans     &tog 2
             >;
         };
 
