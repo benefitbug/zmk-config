@@ -82,7 +82,7 @@
         input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT)>;
       
         scroller {
-          layers = <4>;
+          layers = <3>;
           input-processors = <&zip_xy_to_scroll_mapper>;
           process-next;
         };
