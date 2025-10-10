@@ -4,6 +4,7 @@
   #include <behaviors/mouse_keys.dtsi>
   #include <behaviors/mouse_setting.dtsi>
   #include <input/processors.dtsi>
+  #include <dt-bindings/zmk/input_transform.h>
 
 
  /*
@@ -78,7 +79,7 @@
 
   
     &mouse_ps2_input_listener {
-        input-processors = <&zip_xy_transform(INPUT_TRANSFORM_X_INVERT)>;
+        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT)>;
       
         scroller {
           layers = <TP>;
