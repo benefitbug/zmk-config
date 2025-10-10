@@ -79,7 +79,7 @@
 
   
     &mouse_ps2_input_listener {
-        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT)>;
+        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT)>, <&zip_xy_scaler 2 1>;
       
         scroller {
           layers = <3>;
@@ -119,7 +119,7 @@
     // &mouse_ps2 {
 
       // How sensitive the TP is (Default: 128)
-      tp-sensitivity = <256>;
+      // tp-sensitivity = <128>;
 
 
       // The maximum mouse movement speed the TP will accelarate to
