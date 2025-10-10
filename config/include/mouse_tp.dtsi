@@ -77,16 +77,15 @@
     */
 
   
-   &mouse_ps2_input_listener {
-    input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT)>;
-
-    scroller {
+    &mouse_ps2_input_listener {
+      input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT)>;
+      
+      scroller {
         layers = <5>;
         input-processors = <&zip_xy_to_scroll_mapper>;
         process-next;
+      };
     };
-
-  }
 
    // &mouse_ps2_input_listener {
 
