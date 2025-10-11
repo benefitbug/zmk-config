@@ -52,6 +52,10 @@
 #endif  // HAS_MOUSE_TP
 
 
+&soft_off {
+    hold-time-ms = <1000>; // Only turn off it the key is held for 5 seconds or longer.
+};
+
 / {
     keymap {
         compatible = "zmk,keymap";
@@ -59,10 +63,10 @@
         default_layer {
             label = "QWRT";
             bindings = <
-&kp SQT    &kp W     &kp E    &kp R      &kp T                                       &kp Y           &kp U   &kp I       &kp O     &kp SEMICOLON
-&kp A      &kp S     &kp D    &kp F      &kp G                                       &kp H           &kp J   &kp K       &kp L     &kp P
-&kp Q      &kp X     &kp C    &kp V      &kp Z      &tog 1            &kp B          &kp N           &kp M   &kp COMMA   &kp DOT   &kp B
-&kp LCTRL  &kp LALT  &kp TAB  &kp ENTER  &kp SPACE  &lt 2 RIGHT_ALT   &kp BACKSPACE  &kp LEFT_SHIFT  &tog 3  &tog 1      &tog 4    &kp SLASH
+&kp SQT    &kp W     &kp E    &kp R      &kp T                                       &kp Y           &kp U      &kp I       &kp O     &kp SEMICOLON
+&kp A      &kp S     &kp D    &kp F      &kp G                                       &kp H           &kp J      &kp K       &kp L     &kp P
+&kp Q      &kp X     &kp C    &kp V      &kp Z      &tog 1            &kp B          &kp N           &kp M      &kp COMMA   &kp DOT   &kp B
+&kp LCTRL  &kp LALT  &kp TAB  &kp ENTER  &kp SPACE  &lt 2 RIGHT_ALT   &kp BACKSPACE  &kp LEFT_SHIFT  &mkp LCLK  &tog 1      &tog 4    &kp SLASH
             >;
         };
 
@@ -82,7 +86,7 @@
 &kp LG(NUMBER_1)  &kp LG(NUMBER_2)  &kp LG(N3)  &kp LG(N4)  &kp LG(N5)                    &kp GRAVE         &kp MINUS  &kp UP_ARROW  &kp EQUAL  &kp BACKSLASH
 &kp ESCAPE        &mkp RCLK         &mo 5       &mkp LCLK   &kp DEL                       &kp LEFT_BRACKET  &kp LEFT   &kp DOWN      &kp RIGHT  &kp RIGHT_BRACKET
 &kp N1            &kp N2            &kp N3      &kp N4      &kp N5      &trans  &trans    &kp N6            &kp N7     &kp N8        &kp N9     &kp N0
-&mo 3             &trans            &tog 1      &bt BT_CLR  &bt BT_NXT  &trans  &kp LGUI  &trans            &trans     &trans        &trans     &studio_unlock
+&mo 3             &trans            &tog 1      &bt BT_CLR  &bt BT_NXT  &trans  &kp LGUI  &trans            &trans     &soft_off        &trans     &studio_unlock
             >;
         };
 
