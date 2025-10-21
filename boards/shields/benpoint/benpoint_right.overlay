@@ -38,28 +38,8 @@
 #define MOUSE_PS2_DRIVER_UART
 
 
-// Configure the SCL and SDA pins using the`&pro_micro` notation.
-//
-// If possible, try to choose the blue high frequency pins to avoid
-// bluetooth interference.
-//
-// It will still work even if you pick low frequency pins, but there is a risk
-// that the trackpoint could cause bluetooth interference.
-//
-// On the nice!nano documentation these are green DX pins:
-// https://nicekeyboards.com/docs/nice-nano/pinout-schematic
-//
-// The ideal pins are...
-//   - D1 and D0 for clock and data, because they are high frequency.
-//   - D8, D9, D16 or D10 for the trackpoint reset pin, because it doesn't
-//     need to be high frequency (only needed if you are not using a reset
-//     circuit)
-//
-// But on the corne keyboard, these pins are used for the backlight. So, this
-// example config uses the pins D16 and D10 for clock and data and
-// D9 for the reset circuit.
-#define MOUSE_PS2_PIN_SCL_PRO_MICRO <&pro_micro 2 GPIO_ACTIVE_HIGH>
-#define MOUSE_PS2_PIN_SDA_PRO_MICRO <&pro_micro 1 GPIO_ACTIVE_HIGH>
+#define MOUSE_PS2_PIN_SCL_PRO_MICRO <&pro_micro 5 GPIO_ACTIVE_HIGH>
+#define MOUSE_PS2_PIN_SDA_PRO_MICRO <&pro_micro 4 GPIO_ACTIVE_HIGH>
 
 
 // Configure the Power-On-Reset pin
@@ -72,7 +52,7 @@
 // trackpoint reset circuit.
 //
 // It's ok to use a low-frequency pin for this.
-#define MOUSE_PS2_PIN_RST_PRO_MICRO <&pro_micro 3 GPIO_ACTIVE_HIGH>
+#define MOUSE_PS2_PIN_RST_PRO_MICRO <&pro_micro 6 GPIO_ACTIVE_HIGH>
 
 
 // Configure SDA pin using the pinctrl notation
@@ -94,7 +74,7 @@
 //
 // We don't define the SCL pin, because UART uses a baud rate instead of
 // a clock pin.
-#define MOUSE_PS2_PIN_SDA_PINCTRL <NRF_PSEL(UART_RX, 0, 06)>
+#define MOUSE_PS2_PIN_SDA_PINCTRL <NRF_PSEL(UART_RX, 0, 22)>
 
 // Configure UART BAUD Rate
 //
