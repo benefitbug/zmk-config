@@ -8,6 +8,20 @@
 #define MOUSE_TP 3
 #define MOUSE_TP_SET 4
 
+nice_view_spi: &spi0 {
+
+    compatible = "nordic,nrf-spim";
+    
+    mosi-pin = <20>;
+    
+    sck-pin = <17>;
+    
+    miso-pin = <2>; // unused on sweep
+    
+    cs-gpios = <&gpio1 1 GPIO_ACTIVE_HIGH>;
+
+};  
+
 
 /*
  * Defines to enable/disable features
