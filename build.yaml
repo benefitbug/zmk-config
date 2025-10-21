@@ -20,9 +20,9 @@
 ---
 include:
   - board: nice_nano_v2
-    shield: benpoint_left nice_view_adapter nice_view
+    shield: benpoint_left nice_view_adapter nice_view_battery
   - board: nice_nano_v2
-    shield: benpoint_right nice_view_adapter nice_view
+    shield: benpoint_right nice_view_adapter nice_view_battery
     snippet: zmk-usb-logging studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
   - board: nice_nano_v2
