@@ -8,7 +8,7 @@
 #define MOUSE_TP 3
 #define MOUSE_TP_SET 4
 
-nice_view_spi: &spi0 {
+&nice_view_spi: &spi0 {
 
     compatible = "nordic,nrf-spim";
     
