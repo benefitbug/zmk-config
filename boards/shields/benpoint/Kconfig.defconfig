@@ -14,8 +14,6 @@ if SHIELD_BENPOINT_LEFT || SHIELD_BENPOINT_RIGHT
 config ZMK_SPLIT
     default y
 
-endif
-
 
 if ZMK_DISPLAY
 
