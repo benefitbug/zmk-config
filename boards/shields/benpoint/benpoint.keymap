@@ -18,7 +18,7 @@
     
     miso-pin = <2>; // unused on sweep
     
-    cs-gpios = <&gpio1 1 GPIO_ACTIVE_HIGH>;
+    cs-gpios = <&pro_micro 1 GPIO_ACTIVE_HIGH>;
 
 };  
 
