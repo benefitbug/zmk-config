@@ -52,9 +52,23 @@
 #endif  // HAS_MOUSE_TP
 
 
+
 &soft_off {
-    hold-time-ms = <1000>; // Only turn off it the key is held for 5 seconds or longer.
+    hold-time-ms = <1000>; // Only turn off it the key is held for 1 seconds or longer.
 };
+
+
+/ {
+    combos {
+        compatible = "zmk,combos";
+        combo_softoff {
+            timeout-ms = <50>;
+            key-positions = <42 43>;
+            bindings = <&soft_off>;
+        };
+    };
+};
+
 
 / {
     keymap {
@@ -83,10 +97,10 @@
         symbol_layer {
             label = "SYM";
             bindings = <
-&kp LG(NUMBER_1)  &kp LG(NUMBER_2)  &kp LG(N3)  &kp LG(N4)  &kp LG(N5)                    &kp GRAVE         &kp MINUS  &kp UP_ARROW  &kp EQUAL  &kp BACKSLASH
-&kp ESCAPE        &mkp RCLK         &mo 5       &mkp LCLK   &kp DEL                       &kp LEFT_BRACKET  &kp LEFT   &kp DOWN      &kp RIGHT  &kp RIGHT_BRACKET
-&kp N1            &kp N2            &kp N3      &kp N4      &kp N5      &trans  &trans    &kp N6            &kp N7     &kp N8        &kp N9     &kp N0
-&mo 3             &trans            &tog 1      &bt BT_CLR  &bt BT_NXT  &trans  &kp LGUI  &trans            &trans     &soft_off        &trans     &studio_unlock
+&kp LG(NUMBER_1)  &kp LG(NUMBER_2)  &kp LG(N3)  &kp LG(N4)  &kp LG(N5)                          &kp GRAVE         &kp MINUS  &kp UP_ARROW  &kp EQUAL  &kp BACKSLASH
+&kp ESCAPE        &mkp RCLK         &mo 5       &mkp LCLK   &kp DEL                             &kp LEFT_BRACKET  &kp LEFT   &kp DOWN      &kp RIGHT  &kp RIGHT_BRACKET
+&kp N1            &kp N2            &kp N3      &kp N4      &kp N5      &soft_off  &soft_off    &kp N6            &kp N7     &kp N8        &kp N9     &kp N0
+&mo 3             &trans            &tog 1      &bt BT_CLR  &bt BT_NXT  &trans     &kp LGUI     &trans            &trans     &trans        &trans     &studio_unlock
             >;
         };
 
@@ -100,8 +114,8 @@
             >;
         };
 
-        edit_layer {
-            label = "FUN";
+        misc_layer {
+            label = "EDIT";
             bindings = <
 &trans  &trans   &trans   &trans  &trans                  &trans  &trans  &trans  &trans  &trans
 &trans  &trans   &trans   &trans  &trans                  &trans  &trans  &trans  &trans  &trans
