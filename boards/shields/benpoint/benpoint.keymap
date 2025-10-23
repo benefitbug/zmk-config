@@ -52,6 +52,22 @@
 #endif  // HAS_MOUSE_TP
 
 
+&soft_off {
+    hold-time-ms = <1000>; // Only turn off it the key is held for 1 seconds or longer.
+};
+
+
+/ {
+    combos {
+        compatible = "zmk,combos";
+        combo_softoff {
+            timeout-ms = <50>;
+            key-positions = <42 43>;
+            bindings = <&soft_off>;
+        };
+    };
+};
+
 
 / {
     keymap {
