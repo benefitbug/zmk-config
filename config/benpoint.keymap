@@ -58,7 +58,7 @@
         compatible = "zmk,combos";
         combo_softoff {
             timeout-ms = <50>;
-            key-positions = <43 44>;
+            key-positions = <42 43>;
             bindings = <&soft_off>;
         };
     };
@@ -75,7 +75,7 @@
 &kp SQT    &kp W     &kp E    &kp R      &kp T                                       &kp Y           &kp U      &kp I       &kp O     &kp SEMICOLON
 &kp A      &kp S     &kp D    &kp F      &kp G                                       &kp H           &kp J      &kp K       &kp L     &kp P
 &kp Q      &kp X     &kp C    &kp V      &kp Z      &tog 1            &kp B          &kp N           &kp M      &kp COMMA   &kp DOT   &kp B
-&kp LCTRL  &kp LALT  &kp TAB  &kp ENTER  &kp SPACE  &lt 2 RIGHT_ALT   &kp BACKSPACE  &kp LEFT_SHIFT  &mkp LCLK  &tog 1      &tog 4    &kp SLASH
+&kp LCTRL  &kp LALT  &kp TAB  &kp ENTER  &kp SPACE  &lt 2 RIGHT_ALT   &kp BACKSPACE  &kp LEFT_SHIFT  &mkp LCLK  &tog 1      &soft_off    &kp SLASH
             >;
         };
 
