@@ -9,18 +9,6 @@
 #define MOUSE_TP_SET 4
 
 
-/*
- * Defines to enable/disable features
- *
- * These defines allow us to conditionally enable and disable parts of the keymap config.
- *
- * For example, if we decide to build the firmware without the mouse features, we can
- * disable all the config options that rely on those forks and modules without having
- * to edit the entire keymap file manually every time.
- */
-
-
-
 &soft_off {
     hold-time-ms = <1000>; // Only turn off it the key is held for 1 seconds or longer.
 };
