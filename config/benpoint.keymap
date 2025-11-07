@@ -19,38 +19,6 @@
  * to edit the entire keymap file manually every time.
  */
 
-#define HAS_MOUSE_KEYS
-#define HAS_MOUSE_TP
-
-#ifdef HAS_MOUSE_KEYS
-  #include <dt-bindings/zmk/mouse.h>
-  #include <behaviors/mouse_keys.dtsi>
-#endif  // HAS_MOUSE_KEYS
-
-#ifdef HAS_MOUSE_TP
-  // We store the trackpoint settings in a separate file
-  // to make organization a little easier.
-  #include "mouse_tp.dtsi"
-#endif  // HAS_MOUSE_TP
-
-
-
-// Adjust layer keys based on enabled features.
-//
-// This prevents build errors when we build the firmware
-// without the mouse keys PR or the TP module.
-#ifdef HAS_MOUSE_KEYS
-  #define U_THUMB_INNER &mo MOUSE_KEYS
-#else
-  #define U_THUMB_INNER &none
-#endif  // HAS_MOUSE_KEYS
-
-#ifdef HAS_MOUSE_TP
-  #define U_TOG_TP_SET &tog MOUSE_TP_SET
-#else
-  #define U_TOG_TP_SET &none
-#endif  // HAS_MOUSE_TP
-
 
 
 &soft_off {
@@ -124,33 +92,6 @@
             >;
         };
 
-
-#ifdef HAS_MOUSE_TP
-
-    // Automatically activated when the mouse or trackpoint moves.
-    // Configured in `include/mouse_tp.dtsi`.
-    MouseTP_layer {
-      display-name = "TP";
-      bindings = <
-U_TOG_TP_SET  &msc SCRL_UP   &trans      &msc SCRL_DOWN  &trans                  &trans  &trans  &trans  &trans  &trans
-&trans        &mkp RCLK      &mkp MCLK   &mkp LCLK       &trans                  &trans  &trans  &trans  &trans  &trans
-&kp F1        &trans         &trans      &trans          &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans        &kp F11        &kp F12     &trans          &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-        >;
-    };
-
-    // You can find the defines for the actual key press behaviors in `include/mouse_tp.dtsi`.
-    MouseSettings_layer {
-      display-name = "TP Set";
-      bindings = <
-U_TOG_TP_SET  &trans   &trans   &trans  &trans                  U_MSS_TP_S_I   U_MSS_TP_S_D   U_MSS_TP_PT_I   U_MSS_TP_PT_D  &trans
-U_MSS_RESET   &trans   &trans   &trans  &trans                  U_MSS_TP_NI_I  U_MSS_TP_NI_D  U_MSS_TP_V6_I   U_MSS_TP_V6_D  &trans
-U_MSS_LOG     &trans   &trans   &trans  &trans  &trans  &trans  &trans         &trans         &trans          &trans         &trans
-&trans        &trans   &trans   &trans  &trans  &trans  &trans  &trans         &trans         &trans          &trans         &trans
-      >;
-    };
-
-#endif
 
     };
  };

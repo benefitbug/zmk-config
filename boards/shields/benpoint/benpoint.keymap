@@ -123,33 +123,5 @@
             >;
         };
 
-
-#ifdef HAS_MOUSE_TP
-
-    // Automatically activated when the mouse or trackpoint moves.
-    // Configured in `include/mouse_tp.dtsi`.
-    MouseTP_layer {
-      display-name = "TP";
-      bindings = <
-U_TOG_TP_SET  &msc SCRL_UP   &trans      &msc SCRL_DOWN  &trans                  &trans  &trans  &trans  &trans  &trans
-&trans        &mkp RCLK      &mkp MCLK   &mkp LCLK       &trans                  &trans  &trans  &trans  &trans  &trans
-&kp F1        &trans         &trans      &trans          &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans        &kp F11        &kp F12     &trans          &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-        >;
-    };
-
-    // You can find the defines for the actual key press behaviors in `include/mouse_tp.dtsi`.
-    MouseSettings_layer {
-      display-name = "TP Set";
-      bindings = <
-U_TOG_TP_SET  &trans   &trans   &trans  &trans                  U_MSS_TP_S_I   U_MSS_TP_S_D   U_MSS_TP_PT_I   U_MSS_TP_PT_D  &trans
-U_MSS_RESET   &trans   &trans   &trans  &trans                  U_MSS_TP_NI_I  U_MSS_TP_NI_D  U_MSS_TP_V6_I   U_MSS_TP_V6_D  &trans
-U_MSS_LOG     &trans   &trans   &trans  &trans  &trans  &trans  &trans         &trans         &trans          &trans         &trans
-&trans        &trans   &trans   &trans  &trans  &trans  &trans  &trans         &trans         &trans          &trans         &trans
-      >;
-    };
-
-#endif
-
     };
  };
